@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Her Coded Journal — AI Prompts by Mahnoor</title>
+  <meta name="description" content="Copy-ready AI image and video prompts by Mahnoor, AI Creator. Browse, copy and create." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- DARK MODE: works on its own, no other file needed -->
+  <script>
+    (function () {
+      var t = "light";
+      try { t = localStorage.getItem("theme") || "light"; } catch (e) {}
+      if (t === "dark") document.documentElement.classList.add("dark");
+    })();
+
+    function toggleTheme() {
+      var root = document.documentElement;
+      var isDark = !root.classList.contains("dark");
+      root.classList.toggle("dark", isDark);
+      try { localStorage.setItem("theme", isDark ? "dark" : "light"); } catch (e) {}
+      var btn = document.getElementById("themeToggle");
+      if (btn) btn.textContent = isDark ? "☀️" : "🌙";
+    }
+  </script>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="nav">
+    <div class="container nav-inner">
+      <a href="#top" class="logo">MAH <span>NOOR</span></a>
+      <nav class="nav-links" id="navLinks">
+        <a href="#prompts">Prompts</a>
+        <a href="#about">About</a>
+        <a href="#join">Join</a>
+        <a class="btn btn-small" href="https://instagram.com/hercodedjournal" target="_blank" rel="noopener">Follow on Instagram</a>
+      </nav>
+      <div class="nav-actions">
+        <button type="button" class="icon-btn" id="themeToggle" onclick="toggleTheme()" aria-label="Toggle dark mode">🌙</button>
+        <button type="button" class="icon-btn menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-inner">
+        <p class="eyebrow">✦ AI Creator · Prompts · Workflows</p>
+        <h1>Prompts that turn ideas into <em>stunning</em> AI visuals.</h1>
+        <p class="hero-sub">
+          Hi, I'm Mahnoor. I create AI photos and videos and share the exact prompts behind them,
+          so you can copy, tweak and create your own. Free to browse. Always growing.
+        </p>
+        <div class="hero-cta">
+          <a href="#prompts" class="btn">Browse Prompts</a>
+          <a href="https://instagram.com/hercodedjournal" target="_blank" rel="noopener" class="btn btn-ghost">@hercodedjournal</a>
+        </div>
+        <div class="stats">
+          <div><strong id="statPrompts">0</strong><span>Prompts</span></div>
+          <div><strong>Weekly</strong><span>New drops</span></div>
+          <div><strong>Free</strong><span>Copy &amp; use</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROMPTS -->
+    <section class="section" id="prompts">
+      <div class="container">
+        <div class="section-head">
+          <h2>The Prompt Library</h2>
+          <p>Tap any card to copy the prompt, then paste it into your favorite AI tool.</p>
+        </div>
+
+        <div class="toolbar">
+          <input type="search" id="searchInput" placeholder="Search prompts… (e.g. cinematic, Videos)" aria-label="Search prompts" />
+          <div class="chips" id="chips"></div>
+        </div>
+
+        <div class="grid" id="promptGrid"></div>
+        <p class="empty" id="emptyMsg" hidden>No prompts found. Try a different search ✨</p>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section about" id="about">
+      <div class="container about-inner">
+        <div class="about-card">
+          <img src="Assets/About me.jpg" alt="Mahnoor, AI Creator" class="avatar-img" />
+        </div>
+        <div>
+          <h2>About Me</h2>
+          <p>
+            I'm an AI creator who loves blending creativity with technology. On Instagram I share
+            AI-made photos and videos along with the prompts I used, because great tools are better when shared.
+          </p>
+          <p>
+            This website is the home for all my prompts, organized, searchable and ready to copy.
+            New prompts are added regularly.
+          </p>
+          <ul class="ticks">
+            <li>Copy-ready prompts for images &amp; videos</li>
+            <li>Tips on getting better results</li>
+            <li>New drops every week</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- JOIN / SUBSCRIBE -->
+    <section class="section" id="join">
+      <div class="container">
+        <div class="cta">
+          <h2>Never miss a new prompt</h2>
+          <p>Follow on Instagram for daily creations, or leave your email for updates when new prompt packs go live.</p>
+          <form class="subscribe" id="subscribeForm">
+            <input type="email" id="emailInput" placeholder="you@example.com" required aria-label="Email address" />
+            <button type="submit" class="btn">Notify me</button>
+          </form>
+          <p class="form-msg" id="formMsg" hidden></p>
+          <a class="cta-link" href="https://instagram.com/hercodedjournal" target="_blank" rel="noopener">or follow @hercodedjournal →</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span>© <span id="year"></span> Her Coded Journal · Mahnoor</span>
+      <a href="https://instagram.com/hercodedjournal" target="_blank" rel="noopener">Instagram</a>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast">Prompt copied ✓</div>
+
+  <script src="script.js"></script>
+</body>
+</html>
